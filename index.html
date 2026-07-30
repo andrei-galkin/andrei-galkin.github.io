@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Andrei Galkin | Senior Software Engineer | Identity & Security
+    </title>
+
+    <meta
+      name="description"
+      content="Andrei Galkin is a CISSP-certified Senior Software Engineer specializing in identity platforms, cybersecurity, distributed systems, cloud-native technologies, and open-source projects."
+    />
+
+    <meta name="author" content="Andrei Galkin" />
+
+    <meta
+      property="og:title"
+      content="Andrei Galkin | Senior Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Identity, security, distributed systems, cloud-native engineering and open-source projects."
+    />
+    <meta property="og:url" content="https://andrei-galkin.dev" />
+
+    <link rel="canonical" href="https://andrei-galkin.dev" />
+
+    <style>
+      :root {
+        --bg: #f1f5f9;
+        --card: #ffffff;
+        --text: #0f172a;
+        --heading: #020617;
+        --muted: #475569;
+        --border: #cbd5e1;
+        --accent: #0369a1;
+        --accent-light: #e0f2fe;
+        --shadow: rgba(15, 23, 42, 0.08);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 0 1.5rem;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 2rem 0;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+        text-decoration: none;
+        color: var(--heading);
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      .hero {
+        padding: 5rem 0 4rem;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        color: var(--heading);
+      }
+
+      .hero span {
+        color: var(--accent);
+      }
+
+      .hero p {
+        margin-top: 1.5rem;
+        max-width: 750px;
+
+        font-size: 1.25rem;
+        color: var(--muted);
+      }
+
+      .buttons {
+        margin-top: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+
+        background: var(--accent);
+        color: white;
+
+        padding: 0.8rem 1.5rem;
+
+        border-radius: 8px;
+
+        text-decoration: none;
+
+        font-weight: 700;
+
+        margin-right: 1rem;
+      }
+
+      .btn:hover {
+        background: #075985;
+      }
+
+      .btn.secondary {
+        background: white;
+
+        color: var(--heading);
+
+        border: 1px solid var(--border);
+      }
+
+      section {
+        padding: 4rem 0;
+
+        border-top: 1px solid var(--border);
+      }
+
+      h2 {
+        color: var(--heading);
+
+        font-size: 2rem;
+
+        margin-bottom: 2rem;
+      }
+
+      .about {
+        max-width: 800px;
+
+        color: var(--muted);
+
+        font-size: 1.1rem;
+      }
+
+      .skills {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 0.7rem;
+
+        margin-top: 2rem;
+      }
+
+      .skill {
+        background: var(--accent-light);
+
+        color: var(--accent);
+
+        border: 1px solid #bae6fd;
+
+        padding: 0.5rem 1rem;
+
+        border-radius: 999px;
+
+        font-size: 0.9rem;
+
+        font-weight: 600;
+      }
+
+      .projects {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: var(--card);
+
+        border: 1px solid var(--border);
+
+        border-radius: 14px;
+
+        padding: 1.5rem;
+
+        box-shadow: 0 4px 15px var(--shadow);
+
+        transition: 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      }
+
+      .card h3 {
+        color: var(--heading);
+      }
+
+      .card p {
+        margin: 1rem 0;
+
+        color: var(--muted);
+      }
+
+      .card a {
+        color: var(--accent);
+
+        font-weight: 600;
+
+        text-decoration: none;
+      }
+
+      .contact {
+        color: var(--muted);
+      }
+
+      footer {
+        text-align: center;
+
+        padding: 3rem 0;
+
+        color: var(--muted);
+
+        border-top: 1px solid var(--border);
+      }
+
+      @media (max-width: 700px) {
+        header {
+          flex-direction: column;
+
+          gap: 1rem;
+        }
+
+        nav a {
+          margin: 0 0.5rem;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andrei Galkin",
+        "url": "https://andrei-galkin.dev",
+        "jobTitle": "Senior Software Engineer",
+        "sameAs": [
+          "https://github.com/andrei-galkin",
+          "https://www.linkedin.com/in/andrei-galkin-software-engineer/"
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <a class="logo" href="/"> andrei-galkin.dev </a>
+
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>Hi, I'm <span>Andrei Galkin</span></h1>
+
+          <p>
+            CISSP-certified Senior Software Engineer specializing in Identity &
+            Access Management, cybersecurity, distributed systems, and
+            cloud-native platforms.
+          </p>
+
+          <div class="buttons">
+            <a class="btn" href="#projects"> View Projects </a>
+
+            <a class="btn secondary" href="https://github.com/andrei-galkin">
+              GitHub
+            </a>
+          </div>
+        </section>
+
+        <section id="about">
+          <h2>About Me</h2>
+
+          <p class="about">
+            I design and build secure, scalable software platforms with a focus
+            on identity, authentication, authorization, and distributed systems.
+            My experience includes OAuth2, OpenID Connect, SAML, SCIM, WebAuthn,
+            Kubernetes, Go, Java, cloud platforms, and security architecture.
+          </p>
+
+          <div class="skills">
+            <span class="skill">Go</span>
+            <span class="skill">Java</span>
+            <span class="skill">C++</span>
+            <span class="skill">OAuth2 / OIDC</span>
+            <span class="skill">SAML</span>
+            <span class="skill">SCIM</span>
+            <span class="skill">WebAuthn</span>
+            <span class="skill">Kubernetes</span>
+            <span class="skill">AWS / Azure / GCP</span>
+            <span class="skill">Zero Trust</span>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>Featured Projects</h2>
+
+          <div class="projects">
+            <div class="card">
+              <h3>OpenBao</h3>
+
+              <p>
+                Open-source secrets management and security infrastructure
+                project.
+              </p>
+
+              <a href="https://github.com/openbao/openbao"> View Project → </a>
+            </div>
+
+            <div class="card">
+              <h3>ReedPipe</h3>
+
+              <p>
+                Network traffic analysis and observability platform built with
+                modern systems technologies.
+              </p>
+
+              <a href="https://github.com/andrei-galkin"> View Project → </a>
+            </div>
+
+            <div class="card">
+              <h3>Identity Platform Engineering</h3>
+
+              <p>
+                Large-scale authentication and authorization systems, supporting
+                millions of users and enterprise security requirements.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Let's Connect</h2>
+
+          <p class="contact">
+            Interested in identity security, distributed systems, cloud
+            architecture, or open-source collaboration?
+          </p>
+
+          <br />
+
+          <a class="btn" href="mailto:andron.galkin@gmail.com"> Email Me </a>
+        </section>
+      </main>
+
+      <footer>© 2026 Andrei Galkin · Senior Software Engineer · CISSP</footer>
+    </div>
+  </body>
+</html>
