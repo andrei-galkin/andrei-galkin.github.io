@@ -1,2 +1,2 @@
 # andrei-galkin.github.io
-Personal portfolio and technical blog of Andrei Galkin — Software Engineer, CISSP-certified,  specializing in identity platforms, cybersecurity, distributed systems, and cloud-native technologies.
+Personal engineering portfolio covering scalable distributed systems, identity and security architecture, cloud-native development, and open-source projects by Andrei Galkin.
