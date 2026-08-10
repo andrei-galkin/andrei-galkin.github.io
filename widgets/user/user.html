@@ -43,7 +43,7 @@
           <% if (user.following) { %><li><strong class="stat-number"><%= user.following %></strong><span class="stat-label">following</span></li><% } %>
           <% if (user.public_repos) { %><li><strong class="stat-number"><%= user.public_repos %></strong><span class="stat-label">repositories</span></li><% } %>
         </ul>
-        <a href="<%= user.html_url %>" class="btn small">View on GitHub</a>
+        <a href="<%= user.html_url %>" class="profile-link">View on GitHub <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
