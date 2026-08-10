@@ -390,7 +390,6 @@ small {
 .profile-link {
   display: inline-block;
   color: #004b77;
-  border-bottom: 1px solid rgba(0, 75, 119, 0.35);
   font-size: 0.8125em;
   font-weight: bold;
   line-height: 1.85em;
@@ -399,7 +398,6 @@ small {
 .profile-link:hover,
 .profile-link:focus {
   color: #008cdd;
-  border-bottom-color: #008cdd;
 }
 .italic {
   font-style: italic;
