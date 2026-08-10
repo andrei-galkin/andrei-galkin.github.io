@@ -603,12 +603,20 @@ img.icon {
 .meta--fork .icon-fork {
   position: relative;
   top: -2px;
-  opacity: 0.25;
+  opacity: 1;
+  background-image: none;
+  background-color: #000;
+  -webkit-mask: url("../images/icon-s36a4c966bb.png") 0 0 no-repeat;
+  mask: url("../images/icon-s36a4c966bb.png") 0 0 no-repeat;
 }
 .meta--star .icon-star {
   position: relative;
   top: -2px;
-  opacity: 0.25;
+  opacity: 1;
+  background-image: none;
+  background-color: #f5c518;
+  -webkit-mask: url("../images/icon-s36a4c966bb.png") 0 -16px no-repeat;
+  mask: url("../images/icon-s36a4c966bb.png") 0 -16px no-repeat;
 }
 .simple-list li {
   margin-bottom: 0.375em;
