@@ -528,7 +528,7 @@ img.icon {
   background-clip: padding-box;
   overflow: hidden;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #004b77;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   display: block;
@@ -579,7 +579,7 @@ img.icon {
     rgba(255, 255, 255, 0.5)
   );
   padding: 0 1em;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #004b77;
   background-color: #f1f3f5;
   background-size: 100% 1.1875em;
   background-repeat: no-repeat;
