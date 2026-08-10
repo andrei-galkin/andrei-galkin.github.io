@@ -421,15 +421,15 @@ small {
 .item .date,
 .profile-meta,
 .profile-company {
-  color: #909090;
+  color: #004b77;
 }
 .meta {
-  color: #b2b2b2;
+  color: #004b77;
 }
 .footer,
 .list,
 .item .description {
-  color: #5d5d5d;
+  color: #004b77;
 }
 .bar-title a,
 .item--profile .front .profile-name {
