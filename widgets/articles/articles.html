@@ -1,0 +1,17 @@
+<% _.each(articles, function(article) { %>
+  <li class="item">
+    <div class="shape">
+      <div class="item-content article-card" data-href="<%= article.link %>">
+        <div class="content">
+          <span class="article-source">Medium article</span>
+          <h3 class="title"><%= _.escape(article.title) %></h3>
+          <p class="description" title="<%= _.escape(article.description) %>"><%= _.escape(article.description) %></p>
+          <small class="date">Published <%= _.escape(article.date) %></small>
+        </div>
+        <footer class="metas">
+          <a href="<%= article.link %>" class="article-link" target="_blank" rel="noopener">Read on Medium →</a>
+        </footer>
+      </div>
+    </div>
+  </li>
+<% }); %>

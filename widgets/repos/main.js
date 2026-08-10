@@ -69,6 +69,7 @@ define(['text!./repos.html', 'underscore'], function (tpl, _) {
         _: _
       }));
       this.sandbox.dom.attachEvents(this.events, this);
+      window.mixPortfolioBlocks();
     },
 
     events: {
