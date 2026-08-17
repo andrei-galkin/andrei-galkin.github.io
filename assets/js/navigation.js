@@ -1,9 +1,6 @@
 (function () {
   'use strict';
   var profile = (window.siteConfig && window.siteConfig.profile) || {};
-  document.querySelectorAll('[data-profile]').forEach(function (element) {
-    element.textContent = profile[element.getAttribute('data-profile')] || '';
-  });
   document.querySelectorAll('[data-profile-emphasis]').forEach(function (element) {
     var text = profile[element.getAttribute('data-profile-emphasis')] || '';
     text.split(/(\*\*[^*]+\*\*)/).forEach(function (part) {
@@ -17,11 +14,6 @@
       }
     });
   });
-  document.querySelectorAll('[data-profile-list]').forEach(function (list) {
-    (profile[list.getAttribute('data-profile-list')] || []).forEach(function (text) {
-      var item = document.createElement('li'); item.textContent = text; list.appendChild(item);
-    });
-  });
   document.querySelectorAll('[data-profile-links]').forEach(function (container) {
     (profile.links || []).forEach(function (link) {
       if (!link.url) return;
@@ -31,7 +23,7 @@
     });
   });
   document.querySelectorAll('[data-current-year]').forEach(function (element) { element.textContent = new Date().getFullYear(); });
-  var links = Array.prototype.slice.call(document.querySelectorAll('.primary-navigation a, .mobile-navigation a'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.primary-navigation a'));
   var sections = Array.prototype.slice.call(document.querySelectorAll('main > section[id]'));
   function activate(id) {
     links.forEach(function (link) {

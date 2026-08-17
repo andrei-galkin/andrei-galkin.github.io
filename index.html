@@ -16,19 +16,28 @@
   <link rel="canonical" href="https://andrei-galkin.dev/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
-  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="styles.css">
   <script src="assets/js/site-config.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="assets/js/aura.js"></script>
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js" defer></script>
   <script src="assets/js/navigation.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <aside class="sidebar" aria-label="Site navigation">
     <div>
-      <div class="sidebar-profile" data-aura-style="sidebar" data-aura-widget="user" data-aura-user="andrei-galkin" aria-label="Andrei Galkin profile card"></div>
+      <div class="profile-card" data-profile-card tabindex="0" role="button" aria-label="Andrei Galkin profile card. Activate to show details." aria-pressed="false">
+        <div class="profile-card-inner">
+          <div class="profile-card-face profile-card-front">
+            <img src="https://avatars.githubusercontent.com/u/4046596?v=4" data-profile-avatar alt="Andrei Galkin">
+            <div class="profile-card-label"><h2>Andrei Galkin</h2><p>(Flip to see more info)</p></div>
+          </div>
+          <div class="profile-card-face profile-card-back">
+            <h2>Andrei Galkin</h2>
+            <ul aria-label="Professional focus"><li>Software Architecture</li><li>Distributed Systems</li><li>Security</li></ul>
+            <a href="https://github.com/andrei-galkin" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
       <nav class="primary-navigation" aria-label="Primary">
         <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
@@ -50,12 +59,12 @@
     <section id="projects" aria-labelledby="projects-title">
       <header class="section-heading"><div><p class="section-label">Selected work</p><h2 id="projects-title">Projects</h2></div><p>Open-source repositories loaded directly from GitHub.</p></header>
       <p class="widget-status" data-repos-status role="status">Loading projects…</p>
-      <ul class="items card-grid" data-aura-widget="repos" data-aura-user="andrei-galkin"></ul>
+      <ul class="card-grid" data-repositories></ul>
     </section>
     <section id="articles" aria-labelledby="articles-title">
       <header class="section-heading"><div><p class="section-label">Writing</p><h2 id="articles-title">Articles</h2></div><p>Technical articles and publications from the platforms where I write.</p></header>
       <p class="widget-status" data-articles-status role="status">Loading articles…</p>
-      <ul class="items card-grid" data-aura-widget="articles"></ul>
+      <ul class="card-grid" data-articles></ul>
     </section>
     <section id="contact" class="contact-section" aria-labelledby="contact-title">
       <p class="section-label">Get in touch</p><h2 id="contact-title">Contact</h2>
