@@ -7,7 +7,7 @@
           <% if (repo.homepage) { %>
             <a href="<%= repo.homepage %>" class="url"><%= repo.homepage %></a>
           <% } %>
-          <p class="description" title="<%= _.escape(repo.description || '') %>"><%= _.escape(repo.description) %></p>
+          <p class="description" title="<%= _.escape(repo.description || '') %>"><%= _.escape(repo.description || 'No description provided.') %></p>
           <small class="date">Last updated <%= relativeTime(repo.pushed_at) %></small>
         </div>
         <footer class="metas">

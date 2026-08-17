@@ -1,41 +1,69 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="ie6"> <![endif]-->
-<!--[if IE 7]>         <html class="ie7"> <![endif]-->
-<!--[if IE 8]>         <html class="ie8"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Andrei Galkin">
-  <meta name="description" content="Andrei Galkin's open-source portfolio and public GitHub projects.">
-  <meta property="og:title" content="Andrei Galkin">
-  <meta property="og:description" content="Andrei Galkin's Open Source Portfolio">
+  <meta name="description" content="Andrei Galkin's engineering portfolio: software architecture, distributed systems, identity, security, cloud platforms, and open source.">
+  <meta name="theme-color" content="#f1f3f5">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Andrei Galkin — Software Engineer & Architect">
+  <meta property="og:description" content="Engineering portfolio covering architecture, distributed systems, identity, security, cloud platforms, and open source.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/6404504?v=4">
   <meta property="og:url" content="https://andrei-galkin.dev/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Andrei Galkin">
-  <meta name="twitter:description" content="Andrei Galkin's Open Source Portfolio">
-  <title>Andrei Galkin - Portfolio</title>
+  <title>Andrei Galkin — Software Engineer &amp; Architect</title>
   <link rel="canonical" href="https://andrei-galkin.dev/">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/js/site-config.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="assets/js/aura.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/navigation.js" defer></script>
 </head>
 <body>
-  <section class="container">
-    <div id="items" class="items">
-      <header data-aura-style="complete" data-aura-widget="user" data-aura-user="andrei-galkin"></header>
-      <ul data-aura-widget="repos" data-aura-user="andrei-galkin"></ul>
-      <ul data-aura-widget="articles"></ul>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <aside class="sidebar" aria-label="Site navigation">
+    <div>
+      <div class="sidebar-profile" data-aura-style="sidebar" data-aura-widget="user" data-aura-user="andrei-galkin" aria-label="Andrei Galkin profile card"></div>
+      <nav class="primary-navigation" aria-label="Primary">
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <footer class="footer">
-      <p class="float-right"><a href="https://github.com/andrei-galkin">view profile on github</a></p>
-      <p>open-source portfolio for <a href="https://andrei-galkin.dev/">andrei-galkin.dev</a></p>
-      <p>projects loaded automatically from GitHub</p>
-    </footer>
-  </section>
+    <div class="profile-links" data-profile-links></div>
+  </aside>
+  <main id="main-content">
+    <section id="about" class="about-section" aria-labelledby="about-title">
+      <div class="about-copy">
+        <p class="section-label">Profile</p><h1 id="about-title">About Me</h1>
+        <p class="about-lead" data-profile-emphasis="introduction"></p>
+        <p data-profile-emphasis="leadership"></p>
+        <p data-profile-emphasis="interests"></p>
+        <p data-profile-emphasis="education"></p>
+      </div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <header class="section-heading"><div><p class="section-label">Selected work</p><h2 id="projects-title">Projects</h2></div><p>Open-source repositories loaded directly from GitHub.</p></header>
+      <p class="widget-status" data-repos-status role="status">Loading projects…</p>
+      <ul class="items card-grid" data-aura-widget="repos" data-aura-user="andrei-galkin"></ul>
+    </section>
+    <section id="articles" aria-labelledby="articles-title">
+      <header class="section-heading"><div><p class="section-label">Writing</p><h2 id="articles-title">Articles</h2></div><p>Technical articles and publications from the platforms where I write.</p></header>
+      <p class="widget-status" data-articles-status role="status">Loading articles…</p>
+      <ul class="items card-grid" data-aura-widget="articles"></ul>
+    </section>
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <p class="section-label">Get in touch</p><h2 id="contact-title">Contact</h2>
+      <p>For professional conversations, open-source collaboration, or technical discussion, connect through the profiles below.</p>
+      <div class="contact-links" data-profile-links></div>
+    </section>
+    <footer class="site-footer"><p>© <span data-current-year></span> Andrei Galkin</p><p>Projects loaded dynamically from GitHub</p></footer>
+  </main>
 </body>
 </html>

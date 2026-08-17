@@ -1,17 +1,9 @@
 <% _.each(articles, function(article) { %>
-  <li class="item">
-    <div class="shape">
-      <div class="item-content article-card" data-href="<%= article.link %>">
-        <div class="content">
-          <span class="article-source">Medium article</span>
-          <h3 class="title"><%= _.escape(article.title) %></h3>
-          <p class="description" title="<%= _.escape(article.description) %>"><%= _.escape(article.description) %></p>
-          <small class="date">Published <%= _.escape(article.date) %></small>
-        </div>
-        <footer class="metas">
-          <a href="<%= article.link %>" class="article-link" target="_blank" rel="noopener">Read on Medium →</a>
-        </footer>
-      </div>
-    </div>
-  </li>
+  <li class="item"><article class="shape"><div class="item-content article-card" data-href="<%= article.url %>">
+    <div class="content"><span class="article-source"><%= _.escape(article.source) %></span><h3 class="title"><%= _.escape(article.title) %></h3>
+      <% if (article.description) { %><p class="description"><%= _.escape(article.description) %></p><% } %>
+      <% if (article.date) { %><time class="date" datetime="<%= _.escape(article.isoDate || '') %>">Published <%= _.escape(article.date) %></time><% } %>
+      <% if (article.tags && article.tags.length) { %><ul class="article-tags" aria-label="Topics"><% _.each(article.tags, function(tag) { %><li><%= _.escape(tag) %></li><% }); %></ul><% } %>
+    </div><footer class="metas"><a href="<%= article.url %>" class="article-link" target="_blank" rel="noopener noreferrer">Read at <%= _.escape(article.source) %> →</a></footer>
+  </div></article></li>
 <% }); %>

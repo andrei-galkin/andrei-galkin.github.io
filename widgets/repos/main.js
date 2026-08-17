@@ -47,19 +47,32 @@ define(['text!./repos.html', 'underscore'], function (tpl, _) {
 
     fetch: function() {
       if (!this.path) return;
-      this.sandbox.github(this.path, 'get', this.params).then(function(repos){
+      this.fetchPage(1, []);
+    },
+
+    fetchPage: function(page, allRepos) {
+      var params = _.extend({}, this.params, { page: page, per_page: 100 });
+      this.sandbox.github(this.path, 'get', params).then(function(repos){
+        allRepos = allRepos.concat(repos);
+        if (repos.length === params.per_page) {
+          this.fetchPage(page + 1, allRepos);
+          return;
+        }
         // Remove forked repositories 
         // we have to do this client side, Github API does not seem
         // to allow filtering on unauthenticated calls
-        repos = _.reject(repos, function(repo) {
+        repos = _.reject(allRepos, function(repo) {
           return (repo.fork);
         });
         // And sort by popularity
+        var config = (window.siteConfig && window.siteConfig.projects) || {};
+        var featured = config.featuredRepositories || [];
         repos = _.sortBy(repos, function(repo) {
-          return -1 * repo.watchers_count;
+          var priority = _.indexOf(featured, repo.name);
+          return priority < 0 ? featured.length + 100000 - repo.watchers_count : priority;
         });
         this.render(repos);
-      }.bind(this));
+      }.bind(this), this.renderError);
     },
 
     render: function (repos) {
@@ -69,7 +82,12 @@ define(['text!./repos.html', 'underscore'], function (tpl, _) {
         _: _
       }));
       this.sandbox.dom.attachEvents(this.events, this);
-      window.mixPortfolioBlocks();
+      var status = document.querySelector('[data-repos-status]');
+      if (status) status.textContent = repos.length ? '' : 'No projects are available right now.';
+    },
+    renderError: function () {
+      var status = document.querySelector('[data-repos-status]');
+      if (status) status.textContent = 'Projects could not be loaded. Visit GitHub to browse them directly.';
     },
 
     events: {

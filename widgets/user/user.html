@@ -1,15 +1,25 @@
-<div class="item item--profile item--profile--<%= style %>">
+<div class="item item--profile item--profile--<%= style %>"<% if (style === 'sidebar') { %> tabindex="0" role="button" aria-label="Andrei Galkin profile card. Activate to show details." aria-pressed="false"<% } %>>
   <div class="shape">
     <div class="item-content front" style="background-image:url(<%= user.avatar_url %>&s=600);">
       <div class="content">
         <div class="profile-gradient">
-          <h1 class="profile-name"><%= user.name %></h1><p>(Flip to see more info)</p>
+          <% if (style === 'sidebar') { %><h2 class="profile-name"><%= user.name %></h2><% } else { %><h1 class="profile-name"><%= user.name %></h1><% } %><p>(Flip to see more info)</p>
         </div>
       </div>
     </div>
 
     <div class="item-content back">
       <div class="content">
+        <% if (style === 'sidebar') { %>
+          <div class="sidebar-profile-details">
+            <h2 class="profile-name"><%= user.name %></h2>
+            <ul aria-label="Professional focus">
+              <li>Software Architecture</li>
+              <li>Distributed Systems</li>
+              <li>Security</li>
+            </ul>
+          </div>
+        <% } else { %>
         <header class="md md-10 profile-header">
           <span class="profile-picture img">
             <% if (user.gravatar_id) { %>
@@ -44,6 +54,7 @@
           <% if (user.public_repos) { %><li><strong class="stat-number"><%= user.public_repos %></strong><span class="stat-label">repositories</span></li><% } %>
         </ul>
         <a href="<%= user.html_url %>" class="profile-link">View on GitHub <span aria-hidden="true">→</span></a>
+        <% } %>
       </div>
     </div>
   </div>

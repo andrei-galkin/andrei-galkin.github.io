@@ -28,9 +28,28 @@ define(['text!./user.html', 'underscore'], function(tpl, _) {
 
     events: {
       'click .item': function(e) {
-        if(!$(e.target).is('a') && this.options.style === 'complete'){
-          $(e.currentTarget).toggleClass('flipped');
+        if(!$(e.target).is('a') && (this.options.style === 'complete' || this.options.style === 'sidebar')){
+          if (this.options.style === 'sidebar' && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            return;
+          }
+          this.toggle(e.currentTarget);
         }
+      },
+      'keydown .item': function(e) {
+        if (this.options.style === 'sidebar' && (e.key === 'Enter' || e.key === ' ' || e.keyCode === 13 || e.keyCode === 32)) {
+          e.preventDefault();
+          this.toggle(e.currentTarget);
+        }
+      }
+    },
+
+    toggle: function(element) {
+      var $element = $(element);
+      var flipped = !$element.hasClass('flipped');
+      $element.toggleClass('flipped', flipped);
+      if (this.options.style === 'sidebar') {
+        $element.attr('aria-pressed', flipped ? 'true' : 'false');
+        $element.attr('aria-label', flipped ? 'Andrei Galkin profile details. Activate to show photo.' : 'Andrei Galkin profile card. Activate to show details.');
       }
     }
   };
