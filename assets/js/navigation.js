@@ -32,10 +32,22 @@
       if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
     });
   }
-  activate('about');
+  function activateHash() {
+    var id = window.location.hash.slice(1);
+    if (sections.some(function (section) { return section.id === id; })) activate(id);
+  }
+  activate(window.location.hash ? window.location.hash.slice(1) : 'about');
+  window.addEventListener('hashchange', activateHash);
   if ('IntersectionObserver' in window) {
+    var visibility = {};
     var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) { if (entry.isIntersecting) activate(entry.target.id); });
+      entries.forEach(function (entry) {
+        visibility[entry.target.id] = entry.isIntersecting ? entry.intersectionRatio : 0;
+      });
+      var current = sections.reduce(function (best, section) {
+        return (visibility[section.id] || 0) > (visibility[best.id] || 0) ? section : best;
+      }, sections[0]);
+      if (visibility[current.id]) activate(current.id);
     }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
     sections.forEach(function (section) { observer.observe(section); });
   }

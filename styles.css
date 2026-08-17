@@ -70,6 +70,12 @@ h1,main h2 { margin-bottom: 1.5rem; color: var(--ink); font-size: clamp(2.4rem,5
 .article-footer { font-weight: bold; }
 
 .contact-section { min-height: auto; }
+.collaboration-copy {
+  width: min(100%,70rem);
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
 .contact-section>p:not(.section-label) { max-width: 47rem; color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
 .contact-links { display: flex; gap: .75rem; margin-top: 2rem; }
 .contact-links a { padding: .75rem 1rem; border: 1px solid var(--navy); color: var(--navy); font-size: .82rem; font-weight: bold; }

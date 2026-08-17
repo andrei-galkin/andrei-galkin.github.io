@@ -235,6 +235,16 @@
   }
 
   initializeProfileCard();
-  loadRepositories();
-  loadArticles();
+  Promise.all([loadRepositories(), loadArticles()]).then(function () {
+    var target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      var previousBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      target.scrollIntoView();
+      document.documentElement.style.scrollBehavior = previousBehavior;
+      window.requestAnimationFrame(function () {
+        window.dispatchEvent(new Event('hashchange'));
+      });
+    }
+  });
 }());
