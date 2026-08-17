@@ -88,6 +88,15 @@ a:focus-visible {
   font-size: 0.78rem;
   line-height: 1.8;
 }
+.sidebar-profile-link {
+  position: static;
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: 0.75rem;
+  clear: both;
+  text-align: left;
+}
 .primary-navigation {
   display: block;
   margin-top: 2.5em;

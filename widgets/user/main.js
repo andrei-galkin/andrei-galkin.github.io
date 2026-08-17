@@ -28,7 +28,7 @@ define(['text!./user.html', 'underscore'], function(tpl, _) {
 
     events: {
       'click .item': function(e) {
-        if(!$(e.target).is('a') && (this.options.style === 'complete' || this.options.style === 'sidebar')){
+        if(!$(e.target).closest('a').length && (this.options.style === 'complete' || this.options.style === 'sidebar')){
           if (this.options.style === 'sidebar' && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
             return;
           }
